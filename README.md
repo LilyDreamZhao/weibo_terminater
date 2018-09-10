@@ -4,9 +4,9 @@
 
 博主最近身陷囹圄，穷苦不堪，为此耽搁了这个项目，但考虑到广大青少年对爬虫的需求，我决定近期对改项目进行重构，减少不必要的操作，简化流程，另外，之前在workflow版本召集众人集结了一批数据，也打算在近期开放出来，提供给NLP患者使用。北京地区的同志们不妨加个群：
 ```
- 292889553
+ 292889553Selenium support for PhantomJS has been deprecated,
 ```
-另外，如果直接看到workflow版本，记得先看一下这里，按照这个安装好PhantomJS，不然无法自动获取cookies，并在settings下面设置好PhantomJS的可执行文件路径。
+另外，如果直接看到workflow版本，记得先看一下这里，按照这个安装好PhantomJS，不然无法自动获取cookies，并在settings下面设置好PhantomJS的可执行文件路径。出现Selenium support for PhantomJS has been deprecated情况，代替之下载最新chromdriver.exe自动获取cookies，同样做相关设置。
 
 # 迟来的更新
 
