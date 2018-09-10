@@ -42,9 +42,13 @@ def count_time():
 
 def get_cookie_from_network(account_id, account_password):
     url_login = LOGIN_URL
-    phantom_js_driver_file = os.path.abspath(PHANTOM_JS_PATH)
+    #phantom_js_driver_file = os.path.abspath(PHANTOM_JS_PATH)
+    # phantom_js_driver_file = os.path.abspath(PHANTOM_JS_PATH)
+    # Selenium support for PhantomJS has been deprecated，so use chromerdriver.exe instead.
     if os.path.exists(phantom_js_driver_file):
         try:
+            # print('loading PhantomJS from {}'.format(phantom_js_driver_file))
+            # driver = webdriver.PhantomJS(phantom_js_driver_file)
             print('loading PhantomJS from {}'.format(phantom_js_driver_file))
             driver = webdriver.PhantomJS(phantom_js_driver_file)
             # must set window size or will not find element
@@ -61,6 +65,8 @@ def get_cookie_from_network(account_id, account_password):
             print('account password: {}'.format(account_password))
 
             driver.find_element_by_xpath('//a[@id="loginAction"]').click()
+            # Waiting some time for verification operation.If not, will be wrong during " if 'SSOLoginState' in cookie_string: " command.
+            time.sleep(15);
         except InvalidElementStateException as e:
             print(e)
             print('error, account id {} is not valid, pass this account, you can edit it and then '
